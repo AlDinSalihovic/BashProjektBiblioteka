@@ -1,901 +1,900 @@
 while [ 1 ]
 do
-Ime=("" "" "" "")
-Prezime=("" "" "" "")
-Adresa=("" "" "" "")
-Maticni=("" "" "" "")
-Analiza=("" "" "" "")
+First_name=("" "" "" "")
+Last_name=("" "" "" "")
+Adress=("" "" "" "")
+JMBG=("" "" "" "")
+Analisys=("" "" "" "")
 
-Vrijednost=$Odjel1
-Kapacitet=0
-Vrijednost2=$Odjel2
-Kapacitet2=0
-Vrijednost3=$Odjel3
-Kapacitet3=0
-Vrijednost4=$Odjel4
-Kapacitet4=0
+Value1=$Department1
+Capacity1=0
+Value2=$Department2
+Capacity2=0
+Value3=$Department3
+Capacity3=0
+Value4=$Department4
+Capacity4=0
 
-Maksimalni_kapacitet=4
+Max_capacity=4
 
-Ime_prvog=$Ime_korisnika
-Prezime_prvog=$Prezime_korisnika
-Adresa_prvog=$Adresa_korisnika
-Maticni_prvog=$Maticni_korisnika
-Analiza_prvog=$Analiza_korisnika
+First_name1=$User_name1
+Last_name1=$User_last_name1
+Adress1=$User_adress1
+JMBG1=$User_JMBG1
+Analisys1=$User_Analisys1
 
-Ime_drugog=$Ime_korisnika1
-Prezime_drugog=$Prezime_korisnika1
-Adresa_drugog=$Adresa_korisnika1
-Maticni_drugog=$Maticni_korisnika1
-Analiza_drugog=$Analiza_korisnika1
+First_name2=$User_name2
+Last_name2=$User_last_name2
+Adress2=$User_adress2
+JMBG2=$User_JMBG2
+Analisys2=$User_Analisys2
 
-Ime_treceg=$Ime_korisnika2
-Prezime_treceg=$Prezime_korisnika2
-Adresa_treceg=$Adresa_korisnika2
-Maticni_treceg=$Maticni_korisnika2
-Analiza_treceg=$Analiza_korisnika2
+First_name3=$User_name3
+Last_name3=$User_last_name3
+Adress3=$User_adress3
+JMBG3=$User_JMBG3
+Analisys3=$User_Analisys3
 
-Ime_cetvrtog=$Ime_korisnika3
-Prezime_cetvrtog=$Prezime_korisnika3
-Adresa_cetvrtog=$Adresa_korisnika3
-Maticni_cetvrtog=$Maticni_korisnika3
-Analiza_cetvrtog=$Analiza_korisnika3
+First_name4=$User_name4
+Last_name4=$User_last_name4
+Adress4=$User_adress4
+JMBG4=$User_JMBG4
+Analisys4=$User_Analisys4
 
 echo "Login"
 
-read -p "Naziv : " ime
+read -p "Username : " name
 
 echo "Password"
 
-read -sp "Lozinka : " lozinka
+read -sp "Password : " password
 
-if [[ $ime == 'Administrator' && $lozinka == '12345678' ]]
+if [[ $name == 'Administrator' && $password == '12345678' ]]
 then 
     clear
     echo
     echo
-    echo "Dobro došli"
+    echo "Welcome!"
     echo
     
-select Operacija in KREIRAJTE_PACIJENTA EDITOVANJE_PACIJENTA BRISANJE_PACIJENTA ISPIS_LISTE_PACIJENATA KREIRANJE_ODJELA IZLAZ
+select Operation in CREATING_PATIENT EDIT_PATIENT ERASING_PATIENT LISTING_PATIENTS CREATING_DEPARTMENT EXIT
 do 
-case $Operacija in
-    KREIRAJTE_PACIJENTA)
+case $Operation in
+    CREATING_PATIENT)
     echo
-    echo "Novi korisnik"
+    echo "New user"
     echo
-    echo "Ime : "
-    read Ime_korisnika
-    Ime[0]=$Ime_korisnika
-    echo "Prezime : "
-    read Prezime_korisnika
-    Prezime[0]=$Prezime_korisnika
-    echo "Adresa : "
-    read Adresa_korisnika
-    Adresa[0]=$Adresa_korisnika
-    echo "Jednistveni maticni broj : "
-    read Maticni_korisnika
-    Maticni[0]=$Maticni_korisnika
-    echo "Analiza : "
-    read Analiza_korisnika
-    Analiza[0]=$Analiza_korisnika
+    echo "First_name : "
+    read User_name1
+    First_name[0]=$User_name1
+    echo "Last_name : "
+    read User_last_name1
+    Last_name[0]=$User_last_name1
+    echo "Adress : "
+    read User_adress1
+    Adress[0]=$User_adress1
+    echo "JMBG : "
+    read User_JMBG1
+    JMBG[0]=$User_JMBG1
+    echo "Analisys : "
+    read User_Analisys1
+    Analisys[0]=$User_Analisys1
     echo
-    echo "Novi korisnik"
+    echo "New user"
     echo
-    echo "Ime : "
-    read Ime_korisnika1
-    Ime[1]=$Ime_korisnika1
-    echo "Prezime : "
-    read Prezime_korisnika1
-    Prezime[1]=$Prezime_korisnika1
-    echo "Adresa : "
-    read Adresa_korisnika1
-    Adresa[1]=$Adresa_korisnika1
-    echo "Jednistveni maticni broj : "
-    read Maticni_korisnika1
-    Maticni[1]=$Maticni_korisnika1
-    echo "Analiza : "
-    read Analiza_korisnika1
-    Analiza[1]=$Analiza_korisnika1
+    echo "First_name : "
+    read User_name2
+    First_name[1]=$User_name2
+    echo "Last_name : "
+    read User_last_name2
+    Last_name[1]=$User_last_name2
+    echo "Adress : "
+    read User_adress2
+    Adress[1]=$User_adress2
+    echo "JMBG : "
+    read User_JMBG2
+    JMBG[1]=$User_JMBG2
+    echo "Analisys : "
+    read User_Analisys2
+    Analisys[1]=$User_Analisys2
     echo
-    echo "Novi korisnik"
+    echo "New user"
     echo
-    echo "Ime : "
-    read Ime_korisnika2
-    Ime[2]=$Ime_korisnika2
-    echo "Prezime : "
-    read Prezime_korisnika2
-    Prezime[2]=$Prezime_korisnika2
-    echo "Adresa : "
-    read Adresa_korisnika2
-    Adresa[2]=$Adresa_korisnika2
-    echo "Jednistveni maticni broj : "
-    read Maticni_korisnika2
-    Maticni[2]=$Maticni_korisnika2
-    echo "Analiza : "
-    read Analiza_korisnika2
-    Analiza[2]=$Analiza_korisnika2
+    echo "First_name : "
+    read User_name3
+    First_name[2]=$User_name3
+    echo "Last_name : "
+    read User_last_name3
+    Last_name[2]=$User_last_name3
+    echo "Adress : "
+    read User_adress3
+    Adress[2]=$User_adress3
+    echo "JMBG : "
+    read User_JMBG3
+    JMBG[2]=$User_JMBG3
+    echo "Analisys : "
+    read User_Analisys3
+    Analisys[2]=$User_Analisys3
     echo
-    echo "Novi korisnik"
+    echo "New user"
     echo
-    echo "Ime : "
-    read Ime_korisnika3
-    Ime[3]=$Ime_korisnika3
-    echo "Prezime : "
-    read Prezime_korisnika3
-    Prezime[3]=$Prezime_korisnika3
-    echo "Adresa : "
-    read Adresa_korisnika3
-    Adresa[3]=$Adresa_korisnika3
-    echo "Jednistveni maticni broj : "
-    read Maticni_korisnika3
-    Maticni[3]=$Maticni_korisnika3
-    echo "Analiza : "
-    read Analiza_korisnika3
-    Analiza[3]=$Analiza_korisnika3
+    echo "First_name : "
+    read User_name4
+    First_name[3]=$User_name4
+    echo "Last_name : "
+    read User_last_name4
+    Last_name[3]=$User_last_name4
+    echo "Adress : "
+    read User_adress4
+    Adress[3]=$User_adress4
+    echo "JMBG : "
+    read User_JMBG4
+    JMBG[3]=$User_JMBG4
+    echo "Analisys : "
+    read User_Analisys4
+    Analisys[3]=$User_Analisys4
         ;;
-    EDITOVANJE_PACIJENTA)
+    EDIT_PATIENT)
     echo 
-    echo "Koji biste materijal mijenjali?"
+    echo "What material would you change?"
     echo 
-    select izbor in Prvi Drugi Treci Cetvrti
+    select choice in First Second Third Fourth
     do
-        case $izbor in
-        Prvi)
+        case $choice in
+        First)
         echo 
-        echo "Šta biste konkretno mijenjali?"
+        echo "What would you exactly change?"
         echo 
-        read Odabir
-        if [[ $Odabir == "Ime" ]]
+        read Select
+        if [[ $Select == "Name" ]]
         then
         echo
-        read Ime00
-        Ime[0]=$Ime00
+        read First_Name00
+        First_name[0]=$First_Name00
         break
-        elif [[ $Odabir == "Prezime" ]]
+        elif [[ $Select == "Surname" ]]
         then
         echo
-        read Prezime00
-        Prezime[0]=$Prezime00
+        read Last_name00
+        Last_name[0]=$Last_name00
         break
-        elif [[ $Odabir == 'Adresa' ]]
+        elif [[ $Select == 'Adress' ]]
         then
         echo
-        read Adresa00
-        Adresa[0]=$Adresa00
+        read Adress00
+        Adress[0]=$Adress00
         break
-        elif [[ $Odabir == 'Maticni' ]]
+        elif [[ $Select == 'JMBG' ]]
         then
         echo
-        read Maticni00
-        Maticni[0]=$Maticni00
+        read JMBG00
+        JMBG[0]=$JMBG00
         break
-        elif [[ $Odabir == 'Analiza' ]]
+        elif [[ $Select == 'Analisys' ]]
         then
-        read Analiza00
-        Analiza[0]=$Analiza00
+        read Analisys00
+        Analisys[0]=$Analisys00
         break
         else 
-          echo "Niste unijeli nista kako treba!"
+          echo "You havent entered it right!"
         fi
         ;;
-        Drugi)
+        Second)
         echo 
-        echo "Šta biste konkretno mijenjali?"
+        echo "What would you exactly change?"
         echo 
-        read Odabir
-        if [[ $Odabir == "Ime" ]]
+        read Select
+        if [[ $Select == "Name" ]]
         then
         echo
-        read Ime01
-        Ime[1]=$Ime01
+        read First_name01
+        First_name[1]=$First_name01
         break
-        elif [[ $Odabir == "Prezime" ]]
+        elif [[ $Select == "Surname" ]]
         then
         echo
-        read Prezime01
-        Prezime[1]=$Prezime01
+        read Last_name01
+        Last_name[1]=$Last_name01
         break
-        elif [[ $Odabir == 'Adresa' ]]
+        elif [[ $Odabir == 'Adress' ]]
         then
         echo
-        read Adresa01
-        Adresa[1]=$Adresa01
+        read Adress01
+        Adress[1]=$Adress01
         break
-        elif [[ $Odabir == 'Maticni' ]]
+        elif [[ $Select == 'JMBG' ]]
         then
         echo
-        read Maticni01
-        Maticni[1]=$Maticni01
+        read JMBG01
+        JMBG[1]=$JMBG01
         break
-        elif [[ $Odabir == 'Analiza' ]]
+        elif [[ $Select == 'Analisys' ]]
         then
-        read Analiza01
-        Analiza[1]=$Analiza01
+        read Analisys01
+        Analisys[1]=$Analisys01
         break
         else 
-          echo "Niste unijeli nista kako treba!"
+          echo "You havent entered it right!"
         fi
         ;;
-        Treci)
+        Third)
         echo 
-        echo "Šta biste konkretno mijenjali?"
+        echo "What would you exactly change?"
         echo 
-        read Odabir
-        if [[ $Odabir == "Ime" ]]
+        read Select
+        if [[ $Select == "Name" ]]
         then
         echo
-        read Ime02
-        Ime[2]=$Ime02
+        read First_name02
+        First_name[2]=$First_name02
         break
-        elif [[ $Odabir == "Prezime" ]]
+        elif [[ $Select == "Surname" ]]
         then
         echo
-        read Prezime02
-        Prezime[2]=$Prezime02
+        read Last_name02
+        Last_name[2]=$Last_name02
         break
-        elif [[ $Odabir == 'Adresa' ]]
+        elif [[ $Select == 'Adress' ]]
         then
         echo
-        read Adresa02
-        Adresa[2]=$Adresa02
+        read Adress02
+        Adress[2]=$Adress02
         break
-        elif [[ $Odabir == 'Maticni' ]]
+        elif [[ $Select == 'JMBG' ]]
         then
         echo
-        read Maticni02
-        Maticni[2]=$Maticni02
+        read JMBG02
+        JMBG[2]=$JMBG02
         break
-        elif [[ $Odabir == 'Analiza' ]]
+        elif [[ $Select == 'Analisys' ]]
         then
-        read Analiza02
-        Analiza[2]=$Analiza02
+        read Analisys02
+        Analisys[2]=$Analisys02
         break
         else 
-          echo "Niste unijeli nista kako treba!"
+          echo "You havent entered it right!"
         fi
         ;;
-        Cetvrti)
+        Fourth)
         echo 
-        echo "Šta biste konkretno mijenjali?"
+        echo "What would you exactly change?"
         echo 
-        read Odabir
-        if [[ $Odabir == "Ime" ]]
+        read Select
+        if [[ $Select == "Name" ]]
         then
         echo
-        read Ime03
-        Ime[3]=$Ime03
+        read First_name03
+        First_name[3]=$First_name03
         break
-        elif [[ $Odabir == "Prezime" ]]
+        elif [[ $Odabir == "Surname" ]]
         then
         echo
-        read Prezime03
-        Prezime[3]=$Prezime03
+        read Last_name03
+        Last_name[3]=$Last_name03
         break
-        elif [[ $Odabir == 'Adresa' ]]
+        elif [[ $Select == 'Adress' ]]
         then
         echo
-        read Adresa03
-        Adresa[3]=$Adresa03
+        read Adress03
+        Adress[3]=$Adress03
         break
-        elif [[ $Odabir == 'Maticni' ]]
+        elif [[ $Select == 'JMBG' ]]
         then
         echo
-        read Maticni03
-        Maticni[3]=$Maticni03
+        read JMBG03
+        JMBG[3]=$JMBG03
         break
-        elif [[ $Odabir == 'Analiza' ]]
+        elif [[ $Select == 'Analisys' ]]
         then
-        read Analiza03
-        Analiza[3]=$Analiza03
+        read Analisys03
+        Analisys[3]=$Analisys03
         break
         else 
-          echo "Niste unijeli nista kako treba!"
+          echo "You havent entered it right!"
         fi
         ;;
         esac
     done
     ;;
-    BRISANJE_PACIJENTA)
+    ERASING_PATIENT)
     echo
-    echo "Odlučite se kojeg korisnika želite obrisati?"
+    echo "Whitch user do you want to delete?"
     echo 
-    select izbor2 in Prvi Drugi Treci Cetvrti
+    select choice2 in First Second Third Fourth
     do
-       case $izbor2 in
-       Prvi)
-       Ime[0]=""
-       Prezime[0]=""
-       Adresa[0]=""
-       Maticni[0]=""
-       Analiza[0]=""
+       case $choice2 in
+       First)
+       First_name[0]=""
+       Last_name[0]=""
+       Adress[0]=""
+       JMBG[0]=""
+       Analisys[0]=""
        break
        ;;
-       Drugi)
-       Ime[1]=""
-       Prezime[1]=""
-       Adresa[1]=""
-       Maticni[1]=""
-       Analiza[1]=""
+       Second)
+       First_name[1]=""
+       Last_name[1]=""
+       Adress[1]=""
+       JMBG[1]=""
+       Analisys[1]=""
        break
        ;;
-       Treci)
-       Ime[2]=""
-       Prezime[2]=""
-       Adresa[2]=""
-       Maticni[2]=""
-       Analiza[2]=""
+       Third)
+       First_name[2]=""
+       Last_name[2]=""
+       Adress[2]=""
+       JMBG[2]=""
+       Analisys[2]=""
        break
        ;;
-       Cetvrti)
-       Ime[3]=""
-       Prezime[3]=""
-       Adresa[3]=""
-       Maticni[3]=""
-       Analiza[3]=""
+       Fourth)
+       First_name[3]=""
+       Last_name[3]=""
+       Adress[3]=""
+       JMBG[3]=""
+       Analisys[3]=""
        break
        ;;
        esac
     done
     ;;
-    ISPIS_LISTE_PACIJENATA)
-    echo ${Ime[0]}
-    echo ${Prezime[0]}
-    echo ${Adresa[0]}
-    echo ${Maticni[0]}
-    echo ${Analiza[0]}
+    LISTING_PATIENTS)
+    echo ${First_name[0]}
+    echo ${Last_name[0]}
+    echo ${Adress[0]}
+    echo ${JMBG[0]}
+    echo ${Analisys[0]}
     echo "-----------------------------------"
     echo
-    echo ${Ime[1]}
-    echo ${Prezime[1]}
-    echo ${Adresa[1]}
-    echo ${Maticni[1]}
-    echo ${Analiza[1]}
+    echo ${First_name[1]}
+    echo ${Last_name[1]}
+    echo ${Adress[1]}
+    echo ${JMBG[1]}
+    echo ${Analisys[1]}
     echo "-----------------------------------"
     echo
-    echo ${Ime[2]}
-    echo ${Prezime[2]}
-    echo ${Adresa[2]}
-    echo ${Maticni[2]}
-    echo ${Analiza[2]}
+    echo ${First_name[2]}
+    echo ${Last_name[2]}
+    echo ${Adress[2]}
+    echo ${JMBG[2]}
+    echo ${Analisys[2]}
     echo "-----------------------------------"
     echo
-    echo ${Ime[3]}
-    echo ${Prezime[3]}
-    echo ${Adresa[3]}
-    echo ${Maticni[3]}
-    echo ${Analiza[3]}
+    echo ${First_name[3]}
+    echo ${Last_name[3]}
+    echo ${Adress[3]}
+    echo ${JMBG[3]}
+    echo ${Analisys[3]}
     echo "-----------------------------------"
     echo
     
     ;;
-    KREIRANJE_ODJELA)
+    CREATING_DEPARTMENT)
     echo 
     echo -e "Napišite koje odjele imamo na klinici!\nMozemo imati maksimalno cetiri odjela"
     echo 
     read Odjel1
-    
     read Odjel2
     read Odjel3
     read Odjel4
     ;;
-    IZLAZ)
+    EXIT)
     break
     ;;
 esac
 done
 
-elif [[ $ime == $Ime_prvog && $lozinka == '87654321' ]]
+elif [[ $name == $First_name1 && $password == '87654321' ]]
 then
     clear
     echo
-    echo "Izvolite! Šta vam treba?"
+    echo "Welcome! How can we help you?"
     echo 
     
-select Operacija1 in ISPIS_KARTONA ZAHTJEV_ZA_PRIJEM_NA_ODJEL PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA IZLAZ
+select Operation1 in READ_DOCUMENTS REQUEST_FOR_JOINING CURRENT_NUMBER_OF_PATIENTS EXIT
 do
-    case $Operacija1 in
-    ISPIS_KARTONA)
+    case $Operation1 in
+    READ_DOCUMENTS)
 
-    echo "Ime : " $Ime_prvog
-    echo "Prezime : " $Prezime_prvog
-    echo "Adresa : " $Adresa_prvog
-    echo "Jednistveni maticni broj : " $Maticni_prvog
-    echo "Analiza : " $Analiza_prvog
+    echo "Name : " $First_name1
+    echo "Surname : " $Last_name1
+    echo "Adress : " $Adress1
+    echo "JMBG : " $JMBG1
+    echo "Analisys : " $Analisys1
     echo "________________________________________"
     ;;
-    ZAHTJEV_ZA_PRIJEM_NA_ODJEL)
+    REQUEST_FOR_JOINING)
     echo 
-    echo "Dali se zelite prijaviti na odjel? "
-    read odabir
-    if [ $odabir == 'Da' ]
+    echo "Do you want to join the department? "
+    read Select
+    if [ $Select == 'Yes' ]
     then
     echo 
-    echo "Na koji odjel zelite da se prijavite?"
+    echo "For whitch department do you want to apply?"
     echo
-    select odabir_odjela in $Vrijednost $Vrijednost2 $Vrijednost3 $Vrijednost4
+    select department_select in $Value1 $Value2 $Value3 $Value4
     do
-    case $odabir_odjela in
-    $Vrijednost)
-	if [ $Kapacitet -lt $Maksimalni_kapacitet ]
+    case $department_select in
+    $Value1)
+	if [ $Capacity1 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vašu prijavu"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet++))
-	Kapacitet00=$Kapacitet
+	((Capacity1++))
+	Capacity00=$Capacity1
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We are sorry!\nThe department is full!"
     echo
 	fi
     ;;
-    $Vrijednost2)
-    if [ $Kapacitet2 -lt $Maksimalni_kapacitet ]
+    $Value2)
+    if [ $Capacity2 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet2++))
-	Kapacitet01=$Kapacitet2
+	((Capacity2++))
+	Capacity01=$Capacity2
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se\nOdjel je pun!"
+    echo -e "We are sorry!\nThe department is full!"
     echo
 	fi
     ;;
-    $Vrijednost3)
-    if [ $Kapacitet3 -lt $Maksimalni_kapacitet ]
+    $Value3)
+    if [ $Capacity3 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet3++))
-	Kapacitet02=$Kapacitet3
+	((Capacity3++))
+	Capacity02=$Capacity3
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We are sorry!\nThe department is full!"
     echo
 	fi
     ;;
-    $Vrijednost4)
-    if [ $Kapacitet4 -lt $Maksimalni_kapacitet ]
+    $Value4)
+    if [ $Capacity4 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet4++))
-	Kapacitet03=$Kapacitet4
+	((Capacity4++))
+	Capacity03=$Capacity4
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We are sorry!\nThe department is full!"
     echo
 	fi
     ;;
     esac
     done
-    elif [ $odabir == 'Ne' ]
+    elif [ $Select == 'No' ]
     then
     echo 
-    echo -e "U redu onda.\nDovidjenja i prijatno."
+    echo -e "Alright then! \nGoodbye!"
     echo
     else 
-    echo "Nismo dobili niakakv odgovor"
+    echo "We havent got any answer!"
     echo 
     break
     fi
     break
     ;;
-    PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA)
+    CURRENT_NUMBER_OF_PATIENTS)
     echo
-    echo "Odjeli : "
+    echo "Departments : "
     echo 
-    echo $Vrijednost
-    echo "Trenutno je na odjelu" $Kapacitet00 "klijenata!"
+    echo $Value1
+    echo "In the depaertment is currently " $Capacity00 " patients!"
     echo
-    echo $Vrijednost2
-    echo "Trenutno je na odjelu" $Kapacitet01 "klijenata!"
+    echo $Value2
+    echo "In the depaertment is currently " $Capacity01 " patients!"
     echo
-    echo $Vrijednost3
-    echo "Trenutno je na odjelu" $Kapacitet02 "klijenata!"
+    echo $Value3
+    echo "In the depaertment is currently " $Capacity02 " patients!"
     echo
-    echo $Vrijednost4
-    echo "Trenutno je na odjelu" $Kapacitet03 "klijenata!"
+    echo $Value4
+    echo "In the depaertment is currently " $Capacity03 " patients!"
     echo
     break
     ;;
-    IZLAZ)
+    EXIT)
     break 
     ;;
     esac
 done
 
-elif [[ $ime == $Ime_drugog && $lozinka == '87654321' ]]
+elif [[ $name == $First_name2 && $password == '87654321' ]]
 then
     clear
     echo
-    echo "Izvolite! Šta vam treba?"
+    echo "Hello! \n What do you need!"
     echo 
     
-select Operacija1 in ISPIS_KARTONA ZAHTJEV_ZA_PRIJEM_NA_ODJEL PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA IZLAZ
+select Operation2 in READ_DOCUMENTS REQUEST_FOR_JOINING CURRENT_NUMBER_OF_PATIENTS EXIT
 do
-    case $Operacija1 in
-    ISPIS_KARTONA)
+    case $Operation1 in
+    READ_DOCUMENTS)
 
-    echo "Ime : " $Ime_drugog
-    echo "Prezime : " $Prezime_drugog
-    echo "Adresa : " $Adresa_drugog
-    echo "Jednistveni maticni broj : " $Maticni_drugog
-    echo "Analiza : " $Analiza_drugog
+    echo "Name : " $First_name1
+    echo "Surname : " $Last_name2
+    echo "Adress : " $Adress2
+    echo "JMBG : " $JMBG2
+    echo "Analisys : " $Analisys2
     echo "________________________________________"
     ;;
-    ZAHTJEV_ZA_PRIJEM_NA_ODJEL)
+    REQUEST_FOR_JOINING)
     echo 
-    echo "Dali se zelite prijaviti na odjel? "
-    read odabir
-    if [ $odabir == 'Da' ]
+    echo "Do you want to apply for a department?"
+    read Select
+    if [ $Select == 'Yes' ]
     then
     echo 
-    echo "Na koji odjel zelite da se prijavite?"
+    echo "For what department do you want to apply!?"
     echo
-    select odabir_odjela in $Vrijednost $Vrijednost2 $Vrijednost3 $Vrijednost4
+    select department_select in $Value1 $Value2 $Value3 $Value4
     do
-    case $odabir_odjela in
-    $Vrijednost)
-	if [ $Kapacitet -lt $Maksimalni_kapacitet ]
+    case $department_select in
+    $Value1)
+	if [ $Capacity1 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vašu prijavu"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet++))
-	Kapacitet00=$Kapacitet
+	((Capacity1++))
+	Capacity00=$Capacity1
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost2)
-    if [ $Kapacitet2 -lt $Maksimalni_kapacitet ]
+    $Value2)
+    if [ $Capacity2 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet2++))
-	Kapacitet01=$Kapacitet2
+	((Capacity2++))
+	Capacity01=$Capacity2
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost3)
-    if [ $Kapacitet3 -lt $Maksimalni_kapacitet ]
+    $Value3)
+    if [ $Capacity3 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet3++))
-	Kapacitet02=$Kapacitet3
+	((Capacity3++))
+	Capacity02=$Capacity3
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost4)
-    if [ $Kapacitet4 -lt $Maksimalni_kapacitet ]
+    $Value4)
+    if [ $Capacity4 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet4++))
-	Kapacitet03=$Kapacitet4
+	((Capacity4++))
+	Capacity03=$Capacity4
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
     esac
     done
-    elif [ $odabir == 'Ne' ]
+    elif [ $Select == 'N0' ]
     then
     echo 
-    echo -e "U redu onda.\nDovidjenja i prijatno."
+    echo -e "Alright then.\nGoodbye"
     echo
     else 
-    echo "Nismo dobili niakakv odgovor"
+    echo "Unfortunetly we havent recieved any answer!"
     echo 
     break
     fi
     break
     ;;
-    PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA)
+    CURRENT_NUMBER_OF_PATIENTS)
     echo
-    echo "Odjeli : "
+    echo "Departments : "
     echo 
-    echo $Vrijednost
-    echo "Trenutno je na odjelu" $Kapacitet00 "klijenata!"
+    echo $Value1
+    echo "In the depaertment is currently " $Capacity00 " patients!"
     echo
-    echo $Vrijednost2
-    echo "Trenutno je na odjelu" $Kapacitet01 "klijenata!"
+    echo $Value2
+    echo "In the depaertment is currently " $Capacity01 " patients!"
     echo
-    echo $Vrijednost3
-    echo "Trenutno je na odjelu" $Kapacitet02 "klijenata!"
+    echo $Value3
+    echo "In the depaertment is currently " $Capacity02 " patients!"
     echo
-    echo $Vrijednost4
-    echo "Trenutno je na odjelu" $Kapacitet03 "klijenata!"
+    echo $Value4
+    echo "In the depaertment is currently " $Capacity03 " patients!"
     echo
     break
     ;;
-    IZLAZ)
+    EXIT)
     break 
     ;;
     esac
 done
 
-elif [[ $ime == $Ime_treceg && $lozinka == '87654321' ]]
+elif [[ $name == $First_name3 && $password == '87654321' ]]
 then
     clear
     echo
-    echo "Izvolite! Šta vam treba?"
+    echo "Welcome!\nWhat do you need!"
     echo 
     
-select Operacija1 in ISPIS_KARTONA ZAHTJEV_ZA_PRIJEM_NA_ODJEL PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA IZLAZ
+select Operation3 in READ_DOCUMENTS REQUEST_FOR_JOINING CURRENT_NUMBER_OF_PATIENTS EXIT
 do
-    case $Operacija1 in
-    ISPIS_KARTONA)
+    case $Operation3 in
+    READ_DOCUMENTS)
 
-    echo "Ime : " $Ime_treceg
-    echo "Prezime : " $Prezime_treceg
-    echo "Adresa : " $Adresa_treceg
-    echo "Jednistveni maticni broj : " $Maticni_treceg
-    echo "Analiza : " $Analiza_treceg
+    echo "Name : " $First_name3
+    echo "Surname : " $Last_name3
+    echo "Adress : " $Adress3
+    echo "JMBG : " $JMBG3
+    echo "Analisys : " $Analisys3
     echo "________________________________________"
     ;;
-    ZAHTJEV_ZA_PRIJEM_NA_ODJEL)
+    REQUEST_FOR_JOINING)
     echo 
-    echo "Dali se zelite prijaviti na odjel? "
-    read odabir
-    if [ $odabir == 'Da' ]
+    echo "Do you want to apply for a department?"
+    read Select
+    if [ $Select == 'Yes' ]
     then
     echo 
-    echo "Na koji odjel zelite da se prijavite?"
+    echo "On whitch department do you want to apply?"
     echo
-    select odabir_odjela in $Vrijednost $Vrijednost2 $Vrijednost3 $Vrijednost4
+    select department_select in $Value1 $Value2 $Value3 $Value4
     do
-    case $odabir_odjela in
-    $Vrijednost)
-	if [ $Kapacitet -lt $Maksimalni_kapacitet ]
+    case $department_select in
+    $Value1)
+	if [ $Capacity1 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vašu prijavu"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet++))
-	Kapacitet00=$Kapacitet
+	((Capacity1++))
+	Capacity00=$Capacity1
 	break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost2)
-    if [ $Kapacitet2 -lt $Maksimalni_kapacitet ]
+    $Value2)
+    if [ $Capacity2 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet2++))
-	Kapacitet01=$Kapacitet2
+	((Capacity2++))
+	Capacity01=$Capacity2
 	break
 	else
 	echo 
-    echo -e "Izvinjavamo se\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost3)
-    if [ $Kapacitet3 -lt $Maksimalni_kapacitet ]
+    $Value3)
+    if [ $Capacity3 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet3++))
-	Kapacitet02=$Kapacitet3
+	((Capacity3++))
+	Capacity02=$Capacity3
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost4)
-    if [ $Kapacitet4 -lt $Maksimalni_kapacitet ]
+    $Value4)
+    if [ $Capacity4 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet4++))
-	Kapacitet03=$Kapacitet4
+	((Capacity4++))
+	Capacity03=$Capacity4
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
     esac
     done
-    elif [ $odabir == 'Ne' ]
+    elif [ $Select == 'No' ]
     then
     echo 
-    echo -e "U redu onda.\nDovidjenja i prijatno."
+    echo -e "Alright then.\nGoodbye"
     echo
     else 
-    echo "Nismo dobili niakakv odgovor"
+    echo "Unfortunetly we havent recieved any answer!"
     echo 
     break
     fi
     break
     ;;
-    PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA)
+    CURRENT_NUMBER_OF_PATIENTS)
     echo
-    echo "Odjeli : "
+    echo "Departments : "
     echo 
-    echo $Vrijednost
-    echo "Trenutno je na odjelu" $Kapacitet00 "klijenata!"
+    echo $Value1
+    echo "In the depaertment is currently " $Capacity00 " patients!"
     echo
-    echo $Vrijednost2
-    echo "Trenutno je na odjelu" $Kapacitet01 "klijenata!"
+    echo $Value2
+    echo "In the depaertment is currently " $Capacity01 " patients!"
     echo
-    echo $Vrijednost3
-    echo "Trenutno je na odjelu" $Kapacitet02 "klijenata!"
+    echo $Value3
+    echo "In the depaertment is currently " $Capacity02 " patients!"
     echo
-    echo $Vrijednost4
-    echo "Trenutno je na odjelu" $Kapacitet03 "klijenata!"
+    echo $Value4
+    echo "In the depaertment is currently " $Capacity03 " patients!"
     echo
     break
     ;;
-    IZLAZ)
+    EXIT)
     break 
     ;;
     esac
 done
 
-elif [[ $ime == $Ime_cetvrtog && $lozinka == '87654321' ]]
+elif [[ $name == $First_name4 && $password == '87654321' ]]
 then
     clear
     echo
-    echo "Izvolite! Šta vam treba?"
+    echo "Hello!\n What do you need!"
     echo 
     
-select Operacija1 in ISPIS_KARTONA ZAHTJEV_ZA_PRIJEM_NA_ODJEL PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA IZLAZ
+select Operation4 in READ_DOCUMENTS REQUEST_FOR_JOINING CURRENT_NUMBER_OF_PATIENTS EXIT
 do
-    case $Operacija1 in
-    ISPIS_KARTONA)
+    case $Operation4 in
+    READ_DOCUMENTS)
 
-    echo "Ime : " $Ime_cetvrtog
-    echo "Prezime : " $Prezime_cetvrtog
-    echo "Adresa : " $Adresa_cetvrtog
-    echo "Jednistveni maticni broj : " $Maticni_cetvrtog
-    echo "Analiza : " $Analiza_cetvrtog
+    echo "Name : " $First_name4
+    echo "Surname : " $Last_name4
+    echo "Adress : " $Adress4
+    echo "JMBG : " $JMBG4
+    echo "Analisys : " $Analisys4
     echo "________________________________________"
     ;;
-    ZAHTJEV_ZA_PRIJEM_NA_ODJEL)
+    REQUEST_FOR_JOINING)
     echo 
-    echo "Dali se zelite prijaviti na odjel? "
-    read odabir
-    if [ $odabir == 'Da' ]
+    echo "Do you want to apply for a department?"
+    read Select
+    if [ $Select == 'Yes' ]
     then
     echo 
-    echo "Na koji odjel zelite da se prijavite?"
+    echo "For whitch department do you want to apply?"
     echo
-    select odabir_odjela in $Vrijednost $Vrijednost2 $Vrijednost3 $Vrijednost4
+    select department_select in $Value1 $Value2 $Value3 $Value4
     do
-    case $odabir_odjela in
-    $Vrijednost)
-	if [ $Kapacitet -lt $Maksimalni_kapacitet ]
+    case $department_select in
+    $Value1)
+	if [ $Capacity1 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vašu prijavu"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet++))
-	Kapacitet00=$Kapacitet
+	((Capacity1++))
+	Capacity00=$Capacity1
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost2)
-    if [ $Kapacitet2 -lt $Maksimalni_kapacitet ]
+    $Value2)
+    if [ $Capacity2 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet2++))
-	Kapacitet01=$Kapacitet2
+	((Capacity2++))
+	Capacity01=$Capacity2
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost3)
-    if [ $Kapacitet3 -lt $Maksimalni_kapacitet ]
+    $Value3)
+    if [ $Capacity3 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet3++))
-	Kapacitet02=$Kapacitet3
+	((Capacity3++))
+	Capacity02=$Capacity3
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
-    $Vrijednost4)
-    if [ $Kapacitet4 -lt $Maksimalni_kapacitet ]
+    $Value4)
+    if [ $Capacity4 -lt $Max_capacity ]
 	then
     echo 
-    echo -e "Uredu!\nUzet cemo u obzir vasu prijavu!"
+    echo -e "Alright!\nWe will take your request in consideration!"
     echo
-	((Kapacitet4++))
-	Kapacitet03=$Kapacitet4
+	((Capacity4++))
+	Capacity03=$Capacity4
     break
 	else
 	echo 
-    echo -e "Izvinjavamo se!\nOdjel je pun!"
+    echo -e "We're sorry!\n The department is full!"
     echo
 	fi
     ;;
     esac
     done
-    elif [ $odabir == 'Ne' ]
+    elif [ $Select == 'No' ]
     then
     echo 
-    echo -e "U redu onda.\nDovidjenja i prijatno."
+    echo -e "Alright then!\nGoodbye!"
     echo
     else 
-    echo "Nismo dobili niakakv odgovor"
+    echo "Unfortunetly we havent recieved any answer!"
     echo 
     break
     fi
     break
     ;;
-    PRIKAZ_TRENUTNIH_KAPACITETA_NA_ODJELIMA)
+    CURRENT_NUMBER_OF_PATIENTS)
     echo
-    echo "Odjeli : "
+    echo "Departments : "
     echo 
-    echo $Vrijednost
-    echo "Trenutno je na odjelu" $Kapacitet00 "klijenata!"
+    echo $Value1
+    echo "In the depaertment is currently " $Capacity00 " patients!"
     echo
-    echo $Vrijednost2
-    echo "Trenutno je na odjelu" $Kapacitet01 "klijenata!"
+    echo $Value2
+    echo "In the depaertment is currently " $Capacity01 " patients!"
     echo
-    echo $Vrijednost3
-    echo "Trenutno je na odjelu" $Kapacitet02 "klijenata!"
+    echo $Value3
+    echo "In the depaertment is currently " $Capacity02 " patients!"
     echo
-    echo $Vrijednost4
-    echo "Trenutno je na odjelu" $Kapacitet03 "klijenata!"
+    echo $Value4
+    echo "In the depaertment is currently " $Capacity03 " patients!"
     echo
     break
     ;;
-    IZLAZ)
+    EXIT)
     break 
     ;;
     esac
@@ -903,7 +902,7 @@ done
 
 else 
    echo
-   echo "Niste ispravno upisali naziv ili lozinku!"
+   echo "You havent entered name or password correctly!\nTry again!"
 fi
 
 done
